@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { NavLink } from "react-router-dom"
-import { checkLogin, logout, getUserFromLocalStorage } from '../../helpers/apiHelper'
+import { checkNewLogin, logout, getUserFromLocalStorage } from '../../helpers/apiHelper'
 import { Select } from '@mantine/core';
 import './index.css'
 const navigation = [
@@ -27,30 +27,37 @@ export default function Navbar() {
     ])
 
     useEffect(() => {
-        var user = getUserFromLocalStorage()
-        setUser(user)
-        if (user) {
-            // set profileDropdown with value "-1" to "Benvenuto " + user.Nome
-            setProfileDropdown([
-                { value: -1, label: "Benvenuto/a" },
-                { value: 0, label: 'Il mio Profilo' },
-                { value: 1, label: 'I miei Corsi' },
-                { value: 2, label: 'Esci' }])
 
-            checkLogin(user.Codice_Contatti)
-                .then((response) => {
-                    if (response.data.length > 0)
-                        setShowAccedi(false)
-                    else {
-                        var user = getUserFromLocalStorage()
-                        if (user)
-                            setShowAccedi(false)
-                    }
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
+        // commit parziale, non ci si può basare su un oggetto user nei Cookies
+        // bisogna fare modifiche al BE e salvare nel local storage il bearer token
+        // concordare intervento tecnico per:
+        // generare bearer token
+        // inserire le guardie che decriptano il token nelle api be
+        // salvare in local storage il bearer token
+
+        checkNewLogin()
+        .then((response) => {
+            if (response.data.length > 0){
+
+                setShowAccedi(false);
+
+                setUser(JSON.parse(response.data));
+
+                setProfileDropdown([
+                    { value: -1, label: "Benvenuto/a" },
+                    { value: 0, label: 'Il mio Profilo' },
+                    { value: 1, label: 'I miei Corsi' },
+                    { value: 2, label: 'Esci' }])
+
+            }
+            else {
+                setShowAccedi(true)
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
     }, [])
 
     return (

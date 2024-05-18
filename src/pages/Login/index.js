@@ -2,22 +2,27 @@ import { React, useEffect, useState } from 'react';
 import './index.css'
 import { Loader } from '@mantine/core';
 
-import { login, checkLogin, setUserInLocalStorage, getUserFromLocalStorage } from '../../helpers/apiHelper';
+import { login, checkNewLogin, setUserInLocalStorage, getUserFromLocalStorage } from '../../helpers/apiHelper';
 function Login() {
 
     useEffect(() => {
-        var user = getUserFromLocalStorage()
-        if (user) {
-            checkLogin(user.Codice_Contatti)
-                .then((response) => {
-                    console.log(response.data);
-                    if (response.data.length > 0)
-                        window.location.href = '/user-corsi.php';
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
+
+        // commit parziale, non ci si può basare su un oggetto user nei Cookies
+        // bisogna fare modifiche al BE e salvare nel local storage il bearer token
+        // concordare intervento tecnico per:
+        // generare bearer token
+        // inserire le guardie che decriptano il token nelle api be
+        // salvare in local storage il bearer token
+        
+        checkNewLogin()
+        .then((response) => {
+            if (response.data.length > 0)
+                window.location.href = '/user-corsi.php';
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
     }, [])
 
     const [cf, setCf] = useState('');

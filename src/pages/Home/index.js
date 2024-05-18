@@ -5,7 +5,7 @@ import { ChevronRightIcon, ArrowRightCircleIcon } from '@heroicons/react/24/outl
 import CardCorso from '../../components/CardCorso';
 import { getCorsi } from '../../helpers/apiHelper';
 import MyLoader from '../../components/Loader';
-import { checkLogin } from '../../helpers/apiHelper';
+import { checkNewLogin } from '../../helpers/apiHelper';
 
 import './index.css'
 function Home() {

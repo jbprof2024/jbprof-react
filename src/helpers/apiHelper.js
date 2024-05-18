@@ -106,6 +106,12 @@ export function checkLogin(id) {
     });
 }
 
+export function checkNewLogin() {
+    return apiHelper.get('/check_login_with_session', {
+        withCredentials: true,
+    });
+}
+
 
 export function setUserInLocalStorage(user) {
     localStorage.setItem('user', JSON.stringify(user));
