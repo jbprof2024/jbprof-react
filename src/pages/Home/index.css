@@ -1,0 +1,32 @@
+.scrollable-corsi {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 1.3rem;
+}
+
+.scrollable-corsi::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+    background: #f1f1f1;
+    border-radius: 15px;
+}
+
+.scrollable-corsi::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 15px;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+
+.description-text {
+    line-height: 1.3;
+    font-size: 1.2em;
+}
+
+/* on mobile */
+@media (max-width: 768px) {
+    .description-text {
+        font-size: 1.1em;
+    }
+}

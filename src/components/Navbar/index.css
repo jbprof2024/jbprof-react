@@ -1,0 +1,13 @@
+.select-profile input {
+    border: 0 !important;
+    color: var(--jb-green);
+    font-size: 1.1em;
+    text-align: right;
+}
+
+/* on mobile */
+@media (max-width: 768px) {
+    /* .mantine-Input-rightSection {
+        display: none;
+    } */
+}

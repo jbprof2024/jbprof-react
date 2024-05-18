@@ -1,0 +1,32 @@
+.jb-card-corso {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    /* max-width: 20rem !important; */
+    min-width: 18rem;
+    /* max-width: 20rem; */
+    max-width: 18vw;
+    min-height: 28rem;
+    height: 95%;
+}
+
+/* mobile */
+@media (max-width: 576px) {
+    .jb-card-corso {
+        max-width: 75vw
+    }
+}
+
+.jb-card-corso-img {
+    min-height: 14rem;
+}
+
+.jb-card-corso-img .img {
+    margin: auto;
+}
+
+.jb-card-corso-title {}
+
+.fix-bottom-tag {
+  position: relative;
+  bottom: 0;
+}
