@@ -77,8 +77,16 @@ export default function Footer() {
                             <img src='/brand/logos/paypal.png' className='w-80 w-auto' />
                         </div>
                         <div className="w-full lg:w-1/2 px-4">
+                            <h5 className="text-xl mt-4 mb-2 text-white">Certificazione di qualità</h5>
+                            <ul className="list-disc pl-5">
+                                <li className="mb-2">
+                                    <a className="text-white" target='_blank' href="https://www.jbprof.com/certificazioni/ISO90012015.pdf"><u>Certificato del Sistema di Gestione per la Qualità ISO 9001:2015 per progettazione ed erogazione di eventi formativi.</u></a>
+                                </li>
+                                <li className="mb-2">
+                                    <a className="text-white" target='_blank' href="https://www.jbprof.com/certificazioni/UNIPDR1252022.pdf"><u>Certificato del sistema di Gestione per la Parità di Genere UNI/PdR 125:2022.</u></a>
+                                </li>
+                            </ul>
                             <a target='_blank' href="https://www.jbprof.com/images/kiwa_2019.pdf">
-                                <h5 className="text-xl mt-4 mb-2 text-white">Certificazione di qualità</h5>
                                 <img src='/brand/logos/accredia-kiwa.png' className='h-24 mt-4 w-auto' />
                             </a>
                         </div>
