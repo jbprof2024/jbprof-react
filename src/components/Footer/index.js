@@ -85,6 +85,9 @@ export default function Footer() {
                                 <li className="mb-2">
                                     <a className="text-white" target='_blank' href="https://www.jbprof.com/certificazioni/UNIPDR1252022.pdf"><u>Certificato del sistema di Gestione per la Parità di Genere UNI/PdR 125:2022.</u></a>
                                 </li>
+                                <li className="mb-2">
+                                    <a className="text-white" target='_blank' href="https://www.jbprof.com/certificazioni/Politicaparitadigenere.pdf"><u>Politica per la parità di genere.</u></a>
+                                </li>
                             </ul>
                             <img src='/brand/logos/accredia-kiwa.png' className='h-24 mt-4 w-auto' />
                         </div>
